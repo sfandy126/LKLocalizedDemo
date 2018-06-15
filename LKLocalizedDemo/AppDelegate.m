@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "NSBundle+LKLanguage.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,26 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+
+    //设置当前保存的语言
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:kLanguageKey] && ![[[NSUserDefaults standardUserDefaults] objectForKey:kLanguageKey] isEqualToString:@""]) {
+        [NSBundle setLanguage:[[NSUserDefaults standardUserDefaults] objectForKey:kLanguageKey]];
+    }
+    NSLog(@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:kLanguageKey]);
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    ViewController *ctl = [[ViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:ctl];
+    self.window.rootViewController = navi;
+    [self.window makeKeyAndVisible];
+
+
+
+
     return YES;
 }
 

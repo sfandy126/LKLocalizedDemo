@@ -1,0 +1,26 @@
+/* 
+  InfoPlist.strings
+  LKLocalizedDemo
+
+  Created by CK on 2018/6/15.
+  Copyright © 2018年 LK. All rights reserved.
+*/
+
+
+/**
+ * 格式如：key = "value";
+ * 注意：
+ *  1、key 不能包含空格及特殊符号
+ *  2、每行key-value都需要带上分号;
+ *  3、各种语言key必须一致
+ **/
+
+
+CFBundleDisplayName = "app名称";
+
+FIRST_PAGE_TITLE = "首页";
+SSECOND_PAGE_TITLE = "设置";
+
+TEXT_BUTTON_TITLE = "跳转界面按钮";
+
+TEXT_SWITCH_TITLE = "切换语言";
